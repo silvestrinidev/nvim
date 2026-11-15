@@ -1,0 +1,38 @@
+return {
+  opts = {
+    ensure_installed = {
+      "bash",
+      "blade",
+      "css",
+      "csv",
+      "dockerfile",
+      "gitignore",
+      "html",
+      "http",
+      "java",
+      "javascript",
+      "json",
+      "lua",
+      "luadoc",
+      "php",
+      "printf",
+      "python",
+      "scss",
+      "sql",
+      "tsx",
+      "typescript",
+      "vim",
+      "vimdoc",
+      "xml",
+      "yaml"
+    },
+    auto_install = false,
+    sync_install = false,
+    highlight = {
+      enable = true
+    },
+    intent = {
+      enable = true
+    }
+  }
+}

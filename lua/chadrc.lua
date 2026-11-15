@@ -6,19 +6,69 @@
 local M = {}
 
 M.base46 = {
-	theme = "onedark",
+	theme = "dark_horizon",
+  transparency = true,
 
+  hl_override = {
+    Comment = { italic = true },
+    ["@comment"] = { italic = true },
+  }
 	-- hl_override = {
 	-- 	Comment = { italic = true },
 	-- 	["@comment"] = { italic = true },
 	-- },
 }
 
--- M.nvdash = { load_on_startup = true }
--- M.ui = {
---       tabufline = {
---          lazyload = false
---      }
--- }
+M.nvdash = {
+  load_on_startup = true,
+
+  header = {
+    " ██▓    ▄▄▄      ▒███████▒ ██▓",
+    "▓██▒   ▒████▄    ▒ ▒ ▒ ▄▀░▓██▒",
+    "▒██░   ▒██  ▀█▄  ░ ▒ ▄▀▒░ ▒██▒",
+    "▒██░   ░██▄▄▄▄██   ▄▀▒   ░░██░",
+    "░██████▒▓█   ▓██▒▒███████▒░██░",
+    "░ ▒░▓  ░▒▒   ▓▒█░░▒▒ ▓░▒░▒░▓  ",
+    "░ ░ ▒  ░ ▒   ▒▒ ░░░▒ ▒ ░ ▒ ▒ ░",
+    "  ░ ░    ░   ▒   ░ ░ ░ ░ ░ ▒ ░",
+    "    ░  ░     ░  ░  ░ ░     ░  ",
+    "                 ░            ",
+    "                              ",
+    "                              ",
+    "                              ",
+  },
+
+  buttons = {
+    { txt = "  Find File", keys = "ff", cmd = "Telescope find_files" },
+    { txt = "  Recent Files", keys = "fo", cmd = "Telescope oldfiles" },
+    { txt = "󰈭  Find Word", keys = "fw", cmd = "Telescope live_grep" },
+    { txt = "󰄲  Todo", keys = "jt", cmd = "lua require('configs.notes').pick('todos')" },
+    { txt = "󱥚  Themes", keys = "th", cmd = ":lua require('nvchad.themes').open()" },
+    { txt = "  Mappings", keys = "ch", cmd = "NvCheatsheet" },
+  }
+}
+
+M.ui = {
+  tabufline = {
+    enabled = true,
+    lazyload = true,
+    order = { "treeOffset", "buffers", "tabs", "btns" },
+    modules = nil,
+    bufwidth = 21,
+  },
+
+  statusline = {
+    theme = "vscode_colored",
+    separator_style = "arrow",
+  },
+
+  telescope = { style = "bordered" },
+  colorify = {
+    enabled = true,
+    mode = "virtual",
+    virt_text = "󱓻 ",
+    highlight = { hex = true, lspvars = true },
+  }
+}
 
 return M
